@@ -13,6 +13,11 @@ function searchPokemon(){
             document.getElementById('pokeName').innerHTML = pokemonData.name;
             pokeImg.setAttribute('src', pokemonData.sprites.front_default);
             pokeImg.setAttribute('alt', pokemonData.name);
+        } else {
+            document.getElementById('pokeName').innerHTML = 'Pokemon não existe';
+            pokeImg.setAttribute('src', './assets/images/pokebolaVazia.png');
+            pokeImg.width = 70;
+            pokeImg.setAttribute('alt', 'Pokébola vazia.');
         }
     };
     xhttp.open('GET', pokeApi + pokeName, true);
